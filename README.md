@@ -70,6 +70,38 @@ erDiagram
     styles ||--o{ release_styles : ""
 ```
 
+
+## ⚙️ Database Setup
+
+The database schema for this project is defined in the `scripts/discogs_db_setup.sql` file. This file contains the SQL commands to create the necessary tables and relationships in a MySQL database.
+
+To set up the database:
+
+1.  Ensure you have MySQL installed and running.
+2.  Execute the SQL commands in `scripts/discogs_db_setup.sql` using a MySQL client (e.g., MySQL Workbench). This will create the tables: `releases`, `genres`, `styles`, `release_genres`, and `release_styles`.
+
+## 💾 Data Loading
+
+After creating the database and tables, you need to load the data from the CSV files (located in the `data/` directory) into the database.
+
+You can do this using several methods:
+
+* **MySQL Workbench Import Wizard:** This is a user-friendly way to import CSV data. Follow the instructions within MySQL Workbench to select your CSV files and map the columns to the corresponding tables.
+* **`LOAD DATA INFILE` SQL Statement:** For more efficient loading, you can use the `LOAD DATA INFILE` statement within MySQL. For example, to load data from `data/discogs_genres.csv` into the `genres` table, you could use a command similar to this (adjust the file path as needed):
+
+    ```sql
+    LOAD DATA INFILE '/path/to/your/DiscogsVinylCollection/data/discogs_genres.csv'
+    INTO TABLE genres
+    FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+    LINES TERMINATED BY '\n'
+    IGNORE 1 ROWS;  -- If the CSV has a header row
+    ```
+
+    Repeat this `LOAD DATA INFILE` command (with appropriate adjustments) for each of the CSV files.
+
+* **Scripting Languages (R or Python):** You can also write scripts in R or Python to read the CSVs and insert the data into the database.
+
 ## 🔍 Example SQL Queries
 
 ```sql
