@@ -73,9 +73,3 @@ genre_data <- get_discogs_genres_api(
   output_file = output_path,
   resume = TRUE  # Set to FALSE on first run
 )
-
-# 4. OPTIONAL - Merge with original data
-final_data <- left_join(discogs_data, genre_data, by = "release_id")
-
-# 5. Save final results
-write_csv(final_data, "/pathway/to/your/save/directory/discogs_with_genres_final.csv") # Once you verify the data rename to discogs_export.csv
