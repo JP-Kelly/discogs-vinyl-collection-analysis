@@ -16,7 +16,7 @@ This project documents the process of converting my personal vinyl record collec
 * **Discogs API:** Used to retrieve genre and style information based on release IDs.
 * **Manual Price Data:** Manually collected data on record values (low, median, high) from the Discogs marketplace.
 
-## 📊 Data Processing Workflow
+## 🔄 Data Processing Workflow
 
 1.  **Collection Export:** My vinyl collection was exported from Discogs as a CSV file.
 2.  **Genre Data Retrieval (R):** An R script (`discogs_api_genre_scrape.R`) was used to query the Discogs API and retrieve genre and style information for each record.
