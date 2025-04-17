@@ -2,6 +2,10 @@
 
 This document provides a detailed description of the data fields used in the Discogs vinyl collection analysis project. It outlines the purpose and format of each column across the different datasets.
 
+## ⚠️ Data Availability
+
+For security and privacy reasons, only a limited sample of the first 10 records is included in the `discogs_export.csv` file. To further mitigate potential risks, the `release_id` values in the related CSV files (`discogs_release_genres.csv` and `discogs_release_styles.csv`) have been restricted to match this sample.
+
 ## Datasets Overview
 
 The project uses the following datasets:
