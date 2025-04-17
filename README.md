@@ -22,7 +22,7 @@ This project documents the process of converting my personal vinyl record collec
 2.  **Genre Data Retrieval (R):** An R script (`discogs_api_genre_scrape.R`) was used to query the Discogs API and retrieve genre and style information for each record.
 3.  **Data Normalization (R):** The retrieved data was further normalised using R scripts (`discogs_data_normalize.R`) to create a relational database structure.
 4.  **Database Creation and Loading (SQL):** A MySQL database was created using the `discogs_db_setup.sql` script, and the CSV data was loaded into the database tables.
-5.  **Price Data Merging (R):** Manually collected price data was merged with the main dataset using an R script (`discogs_merge_prices.R`).
+5.  **Price Data Merging (R):** The process of merging manually collected price data with the main dataset involved an initial cleaning step in Excel. The `=ISTEXT(A1)` formula was applied to a temporary worksheet to identify and filter out non-price rows before importing the data into R for merging. The R script (`discogs_merge_prices.R`) then performed the final merge.
 6.  **Data Analysis (R/SQL):** R and SQL queries were used to analyse the collection's characteristics.
 7.  **Visualisation (Tableau - Future):** (Planned) Interactive visualisations will be created in Tableau to explore the data.
 
@@ -71,7 +71,7 @@ erDiagram
 ```
 
 
-## ⚙️ Database Setup
+## 🏗️ Database Setup
 
 The database schema for this project is defined in the `scripts/discogs_db_setup.sql` file. This file contains the SQL commands to create the necessary tables and relationships in a MySQL database.
 
