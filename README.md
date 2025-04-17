@@ -123,4 +123,6 @@ WHERE dg.genre_name = 'Jazz';
 
 -- (More examples to be added...)
 ```
+## ⚠️ Data Availability
 
+For security and privacy reasons, only a limited sample of the first 10 records is included in the `discogs_export.csv` file. To further mitigate potential risks, the `release_id` values in the related CSV files (`discogs_release_genres.csv` and `discogs_release_styles.csv`) have been restricted to match this sample.
